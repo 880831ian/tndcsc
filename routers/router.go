@@ -17,7 +17,7 @@ func SetupRouter() *gin.Engine {
 	limiter.SetMessage(`{"http_code": "429", "message": "API 請求頻率過快，請稍後再試！", "status": "error"}`)
 
 	// 設置需要頻率限制的路由
-	r.GET("/", tollbooth_gin.LimitHandler(limiter), controllers.GetData)
+	r.GET("/tndcsc", tollbooth_gin.LimitHandler(limiter), controllers.GetData)
 
 	return r
 }
